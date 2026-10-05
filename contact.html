@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Contact · Isaac MWEMBIA CINZA</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Playfair+Display:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div id="app" data-page="contact">
+<div id="site-header"></div>
+<main class="wrap">
+<div class="page-head"><span class="label"><span data-l="fr">Contact</span><span data-l="en">Contact</span></span><h1><span data-l="fr">Parlons de ton projet</span><span data-l="en">Let's talk about your project</span></h1><p><span data-l="fr">Remplis le message, puis envoie-le par WhatsApp ou par Gmail. Il arrive déjà rédigé dans l'application.</span><span data-l="en">Fill in the message, then send it by WhatsApp or Gmail. It arrives already written in the app.</span></p></div>
+<div class="two even block">
+  <form class="composer" id="composer" autocomplete="off">
+    <label><span data-l="fr">Ton nom</span><span data-l="en">Your name</span><input id="f-name" type="text" maxlength="80"></label>
+    <label><span data-l="fr">Sujet</span><span data-l="en">Subject</span><select id="f-subject"></select></label>
+    <label>Message<textarea id="f-msg" maxlength="600"></textarea></label>
+    <div class="btn-row">
+      <a class="btn wa" id="send-wa" target="_blank" rel="noopener" href="https://wa.me/243808464837"><span data-l="fr">Envoyer par WhatsApp</span><span data-l="en">Send by WhatsApp</span> →</a>
+      <a class="btn gmail" id="send-mail" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=isaaccinza730%40gmail.com"><span data-l="fr">Envoyer par Gmail</span><span data-l="en">Send by Gmail</span> →</a>
+      <a class="btn li" target="_blank" rel="noopener" href="https://www.linkedin.com/in/isaac-cinza1/"><span data-l="fr">Ouvrir LinkedIn</span><span data-l="en">Open LinkedIn</span> →</a>
+    </div>
+  </form>
+  <div class="channels">
+    <div class="channel" data-brand="wa"><span class="label">WhatsApp</span><a class="v" data-wa target="_blank" rel="noopener" href="https://wa.me/243808464837">+243 808 464 837</a><button class="copy" type="button" data-copy="+243 808 464 837"><span data-l="fr">Copier</span><span data-l="en">Copy</span></button></div>
+    <div class="channel" data-brand="gmail"><span class="label">Gmail</span><a class="v" data-mail target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=isaaccinza730%40gmail.com">isaaccinza730@gmail.com</a><button class="copy" type="button" data-copy="isaaccinza730@gmail.com"><span data-l="fr">Copier</span><span data-l="en">Copy</span></button></div>
+    <div class="channel" data-brand="li"><span class="label">LinkedIn</span><a class="v" target="_blank" rel="noopener" href="https://www.linkedin.com/in/isaac-cinza1/">linkedin.com/in/isaac-cinza1</a></div>
+  </div>
+</div>
+</main>
+<div id="site-footer"></div>
+</div>
+<script src="site.js"></script>
+</body></html>
