@@ -3,6 +3,7 @@
   var app = document.getElementById("app");
   var page = app ? app.getAttribute("data-page") : "";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var GA_ID = "G-GMPX24VL2W"; /* Google Analytics : colle ici ton ID de mesure, de la forme G-XXXXXXXXXX */
   var CONTACT = { phone: "243808464837", phoneText: "+243 808 464 837", email: "isaaccinza730@gmail.com" };
 
   function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
@@ -129,7 +130,7 @@
     var f = $("#site-footer");
     if (f) {
       f.innerHTML = '<footer class="foot"><div class="wrap"><div><b>Isaac MWEMBIA CINZA</b><br>' + L("CEO de CINZA Labs", "CEO of CINZA Labs") + ' · Mbujimayi, ' + L("RDC", "DRC") + ' · © ' + new Date().getFullYear() + ' · ' + L("Tous droits réservés", "All rights reserved") + '</div>' +
-        '<nav aria-label="Pied de page">' + NAV.map(function (n) { return '<a href="' + n.href + '">' + L(n.fr, n.en) + "</a>"; }).join("") + "</nav></div></footer>" +
+        '<nav aria-label="Pied de page">' + NAV.map(function (n) { return '<a href="' + n.href + '">' + L(n.fr, n.en) + "</a>"; }).join("") + (GA_ID ? '<button type="button" class="cookie-link" id="cookie-btn">' + L("Cookies", "Cookies") + "</button>" : "") + "</nav></div></footer>" +
         '<div class="fab"><a data-wa target="_blank" rel="noopener" href="https://wa.me/' + CONTACT.phone + '" aria-label="WhatsApp">' +
         '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19z"/></svg><span>WhatsApp</span></a></div>';
     }
@@ -306,6 +307,7 @@
       a.addEventListener("click", function (e) {
         var k = a.getAttribute("data-cv");
         if (!cvBlobs[k]) { e.preventDefault(); return; }
+        if (!downloads) a.setAttribute("download", CVS[k].name);
         if (downloads) {
           e.preventDefault();
           downloads.save({ filename: CVS[k].name, data: cvBlobs[k] }).catch(function (err) {
@@ -344,9 +346,40 @@
     });
   }
 
+  /* ---------- Statistiques (Google Analytics) avec consentement ---------- */
+  var gaLoaded = false;
+  function loadGA() {
+    if (!GA_ID || gaLoaded) return;
+    gaLoaded = true; window["ga-disable-" + GA_ID] = false;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date()); window.gtag("config", GA_ID);
+    var g = document.createElement("script"); g.async = true;
+    g.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_ID);
+    document.head.appendChild(g);
+  }
+  function initConsent() {
+    if (!GA_ID) return;
+    var bar = null;
+    function hide() { if (bar) { bar.remove(); bar = null; } }
+    function show() {
+      if (bar) return;
+      bar = document.createElement("div"); bar.className = "consent"; bar.setAttribute("role", "dialog"); bar.setAttribute("aria-label", "Cookies");
+      bar.innerHTML = "<p>" + L("Ce site mesure anonymement ses visites avec Google Analytics, qui utilise des cookies. Acceptez-vous ?", "This site measures its visits anonymously with Google Analytics, which uses cookies. Do you accept?") + "</p>" +
+        '<div class="consent-btns"><button type="button" class="consent-no">' + L("Refuser", "Decline") + '</button><button type="button" class="consent-yes">' + L("Accepter", "Accept") + "</button></div>";
+      document.body.appendChild(bar);
+      $(".consent-yes", bar).addEventListener("click", function () { store("pf-consent", "yes"); hide(); loadGA(); });
+      $(".consent-no", bar).addEventListener("click", function () { store("pf-consent", "no"); window["ga-disable-" + GA_ID] = true; hide(); });
+    }
+    var c = load("pf-consent");
+    if (c === "yes") loadGA(); else if (c !== "no") show(); else window["ga-disable-" + GA_ID] = true;
+    var cb = $("#cookie-btn"); if (cb) cb.addEventListener("click", show);
+  }
+
   /* ---------- Boot ---------- */
   window.__PF = { POLES: POLES, PROJECTS: PROJECTS, CONTACT: CONTACT, lang: function () { return lang; }, waLink: waLink };
   renderChrome();
+  initConsent();
   if (page === "home") initHome();
   if (page === "skills") initSkills();
   if (page === "projects") initProjects();

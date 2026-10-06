@@ -370,3 +370,13 @@ h1, h2, h3, p, li, a, .btn, .chip { overflow-wrap: anywhere; }
 .ai-note { margin: 0; padding: 0.3rem 0.9rem 0.8rem; font-size: 0.74rem; line-height: 1.35; }
 @media (max-width: 26rem) { .ai-btn .ai-lbl { display: none; } .ai-btn { padding: 0.8rem; } }
 @media (max-height: 30rem) { .ai-panel { max-height: calc(100vh - 5.5rem); } .ai-note, .ai-chips { display: none; } }
+
+/* Consentement cookies */
+.consent { position: fixed; left: 1rem; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); z-index: 90; max-width: 38rem; margin-inline: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.7rem 1rem; background: var(--bg); color: var(--ink); border: 2px solid var(--bar); border-radius: 1.5rem; padding: 0.9rem 1.1rem; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35); font-size: 0.95rem; line-height: 1.4; }
+.consent p { flex: 1 1 16rem; min-width: 0; }
+.consent-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.consent button { border-radius: 999px; padding: 0.5rem 1.1rem; font: 700 0.85rem var(--font-ui); cursor: pointer; border: 2px solid var(--bar); }
+.consent-yes { background: var(--bar); color: #FFFFFF; }
+.consent-no { background: transparent; color: var(--ink); }
+.consent button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.cookie-link { background: none; border: 0; padding: 0; color: #FFFFFF; font: inherit; text-decoration: underline; cursor: pointer; }
