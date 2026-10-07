@@ -380,3 +380,29 @@ h1, h2, h3, p, li, a, .btn, .chip { overflow-wrap: anywhere; }
 .consent-no { background: transparent; color: var(--ink); }
 .consent button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
 .cookie-link { background: none; border: 0; padding: 0; color: #FFFFFF; font: inherit; text-decoration: underline; cursor: pointer; }
+
+/* Pages de services */
+.foot .foot-svc { flex-basis: 100%; }
+.foot-svc a { font-weight: 600; }
+.link-more { display: inline-block; margin-top: 0.8rem; font-weight: 700; color: var(--blue); }
+.svc .page-head .btn-row { margin-top: 1.4rem; }
+.svc-sec { padding-top: 0.5rem; scroll-margin-top: 5rem; }
+.svc-sec > p { max-width: 46rem; margin-bottom: 0.8rem; }
+.svc .rows h3 { overflow-wrap: anywhere; }
+.svc .status { font: 600 0.75rem var(--font-ui); border: 1px solid var(--rule); padding: 0.1rem 0.5rem; margin-left: 0.4rem; white-space: nowrap; }
+.steps { margin: 0; padding-left: 1.4rem; max-width: 46rem; }
+.steps li { padding: 0.35rem 0 0.35rem 0.3rem; overflow-wrap: anywhere; }
+.steps li::marker { color: var(--blue); font-weight: 800; }
+.faq { max-width: 46rem; border-top: 2px solid var(--ink); }
+.faq details { border-bottom: 1px solid var(--rule); padding: 0.9rem 0; }
+.faq summary { cursor: pointer; font: 700 1.05rem var(--font-ui); list-style: none; display: flex; justify-content: space-between; gap: 1rem; overflow-wrap: anywhere; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--blue); font-weight: 800; flex: none; }
+.faq details[open] summary::after { content: "–"; }
+.faq summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.faq details p { margin-top: 0.6rem; }
+.svc-cta { border-top: 2px solid var(--ink); padding-top: 1.6rem; }
+.svc-cta p { margin: 0.4rem 0 1rem; }
+.rows h3 a { color: var(--blue); }
+.ai-more { border-style: dashed; }
+.ai-chips { max-height: 7.2rem; overflow-y: auto; }

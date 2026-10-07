@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://isaac-cinza.github.io/isaac-cinza/</loc><lastmod>2026-10-06</lastmod></url>
-  <url><loc>https://isaac-cinza.github.io/isaac-cinza/competences.html</loc><lastmod>2026-10-06</lastmod></url>
-  <url><loc>https://isaac-cinza.github.io/isaac-cinza/projets.html</loc><lastmod>2026-10-06</lastmod></url>
-  <url><loc>https://isaac-cinza.github.io/isaac-cinza/cinza.html</loc><lastmod>2026-10-06</lastmod></url>
-  <url><loc>https://isaac-cinza.github.io/isaac-cinza/parcours.html</loc><lastmod>2026-10-06</lastmod></url>
-  <url><loc>https://isaac-cinza.github.io/isaac-cinza/contact.html</loc><lastmod>2026-10-06</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://isaac-cinza.github.io/isaac-cinza/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://isaac-cinza.github.io/isaac-cinza/competences.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://isaac-cinza.github.io/isaac-cinza/projets.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://isaac-cinza.github.io/isaac-cinza/cinza.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://isaac-cinza.github.io/isaac-cinza/parcours.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://isaac-cinza.github.io/isaac-cinza/contact.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://isaac-cinza.github.io/isaac-cinza/analyse-de-donnees.html</loc><lastmod>2026-10-07</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://isaac-cinza.github.io/isaac-cinza/analyse-de-donnees.html"/><xhtml:link rel="alternate" hreflang="en" href="https://isaac-cinza.github.io/isaac-cinza/data-analysis.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://isaac-cinza.github.io/isaac-cinza/analyse-de-donnees.html"/></url>
+  <url><loc>https://isaac-cinza.github.io/isaac-cinza/data-analysis.html</loc><lastmod>2026-10-07</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://isaac-cinza.github.io/isaac-cinza/analyse-de-donnees.html"/><xhtml:link rel="alternate" hreflang="en" href="https://isaac-cinza.github.io/isaac-cinza/data-analysis.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://isaac-cinza.github.io/isaac-cinza/analyse-de-donnees.html"/></url>
+  <url><loc>https://isaac-cinza.github.io/isaac-cinza/conseil-en-recherche.html</loc><lastmod>2026-10-07</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://isaac-cinza.github.io/isaac-cinza/conseil-en-recherche.html"/><xhtml:link rel="alternate" hreflang="en" href="https://isaac-cinza.github.io/isaac-cinza/research-consulting.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://isaac-cinza.github.io/isaac-cinza/conseil-en-recherche.html"/></url>
+  <url><loc>https://isaac-cinza.github.io/isaac-cinza/research-consulting.html</loc><lastmod>2026-10-07</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://isaac-cinza.github.io/isaac-cinza/conseil-en-recherche.html"/><xhtml:link rel="alternate" hreflang="en" href="https://isaac-cinza.github.io/isaac-cinza/research-consulting.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://isaac-cinza.github.io/isaac-cinza/conseil-en-recherche.html"/></url>
+  <url><loc>https://isaac-cinza.github.io/isaac-cinza/developpement-front-end.html</loc><lastmod>2026-10-07</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://isaac-cinza.github.io/isaac-cinza/developpement-front-end.html"/><xhtml:link rel="alternate" hreflang="en" href="https://isaac-cinza.github.io/isaac-cinza/front-end-development.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://isaac-cinza.github.io/isaac-cinza/developpement-front-end.html"/></url>
+  <url><loc>https://isaac-cinza.github.io/isaac-cinza/front-end-development.html</loc><lastmod>2026-10-07</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://isaac-cinza.github.io/isaac-cinza/developpement-front-end.html"/><xhtml:link rel="alternate" hreflang="en" href="https://isaac-cinza.github.io/isaac-cinza/front-end-development.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://isaac-cinza.github.io/isaac-cinza/developpement-front-end.html"/></url>
 </urlset>

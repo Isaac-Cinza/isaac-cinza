@@ -48,7 +48,7 @@
       note: { fr: "Je guide et je structure. Le travail reste celui du chercheur : je ne rédige pas à sa place.", en: "I guide and structure. The work remains the researcher's own: I do not write it for them." } },
     { id: "front", c: "c-front", label: { fr: "Front-end", en: "Front-end" },
       title: { fr: "Développement front-end", en: "Front-end development" },
-      short: { fr: "Tout ce qu'un développeur front-end sait faire, à un niveau très avancé : sites, applications web et interfaces, sur tous les écrans, avec les outils les plus adaptés.", en: "Everything a front-end developer can do, at a very advanced level: websites, web applications and interfaces, on every screen, with the most suitable tools." },
+      short: { fr: "Je conçois et je développe des sites web et des applications web sur mesure : des interfaces soignées, rapides et fiables sur tous les écrans.", en: "I design and build websites and custom web applications: polished, fast and reliable interfaces on every screen." },
       text: { fr: "Je prends en charge toute la partie visible d'un produit web : de la maquette à la mise en ligne, avec les technologies et les outils adaptés au projet. Sites vitrines, applications, tableaux de bord, interfaces de plateformes : le rendu est soigné, rapide et fiable sur tous les appareils.", en: "I handle the whole visible side of a web product: from mockup to launch, with the technologies and tools that suit the project. Showcase sites, applications, dashboards, platform interfaces: the result is polished, fast and reliable on every device." },
       audience: { fr: "Indépendants, entreprises, radios, ONG, écoles, institutions et équipes qui ont besoin d'un site ou d'une application web de qualité.", en: "Freelancers, businesses, radio stations, NGOs, schools, institutions and teams that need a high-quality website or web application." },
       tools: ["HTML5", "CSS3 · Sass", "JavaScript (ES6+)", "TypeScript", "React", "Tailwind CSS · Bootstrap", "Figma", "Git · GitHub", "Netlify · Vercel · GitHub Pages"],
@@ -62,6 +62,14 @@
         { t: { fr: "Mise en ligne", en: "Going live" }, d: { fr: "Publication professionnelle sur toutes les plateformes : GitHub Pages, Netlify, Vercel ou hébergement classique, avec nom de domaine.", en: "Professional publishing on every platform: GitHub Pages, Netlify, Vercel or standard hosting, with a domain name." } }
       ] }
   ];
+  var SVC_URL = {
+    data: { fr: "analyse-de-donnees.html", en: "data-analysis.html" },
+    research: { fr: "conseil-en-recherche.html", en: "research-consulting.html" },
+    front: { fr: "developpement-front-end.html", en: "front-end-development.html" }
+  };
+  function svcLink(id, cls, fr, en) {
+    return '<a class="' + cls + '" data-l="fr" href="' + SVC_URL[id].fr + '">' + fr + '</a><a class="' + cls + '" data-l="en" href="' + SVC_URL[id].en + '">' + en + "</a>";
+  }
   var LEVELS = { 5: { fr: "Très avancé", en: "Very advanced" }, 4: { fr: "Avancé", en: "Advanced" } };
 
   var PROJECTS = [
@@ -70,7 +78,7 @@
       text: { fr: "Un seul programme de calcul des résultats pour toutes les facultés de l'université, du choix de la faculté à celui de la promotion.", en: "A single results calculator for every faculty of the university, from choosing the faculty to choosing the class." },
       detail: { fr: ["Une page d'accueil qui explique l'utilisation, un bouton par faculté, puis une liste déroulante des promotions.", "Saisie des notes (travaux journaliers puis examen) et calcul en direct des moyennes, des crédits validés et de la mention.", "Commencé par la médecine, du Bac+1 au Master 3. Premier modèle : L3 LMD en sciences biomédicales (60 crédits).", "Pensé pour le téléphone (Android et iPhone) et partageable par lien."], en: ["A home page explaining how to use it, one button per faculty, then a drop-down list of classes.", "Grade entry (continuous assessment then exam) with live calculation of averages, validated credits and distinction.", "Started with medicine, from Bac+1 to Master 3. First model: L3 LMD in biomedical sciences (60 credits).", "Designed for phones (Android and iPhone) and shareable by link."] },
       stack: ["Python", "Tkinter", "HTML", "CSS", "JavaScript"] },
-    { poles: ["front"], status: { fr: "En conception", en: "In design" },
+    { poles: ["front"], status: { fr: "En cours", en: "In progress" },
       title: { fr: "Plateforme de rédaction radio", en: "Radio newsroom platform" },
       text: { fr: "Plateforme numérique pour la rédaction d'une station de radio.", en: "Digital platform for a radio station's newsroom." },
       detail: { fr: ["Soumission des nouvelles par les rédacteurs.", "Suivi de la validation de chaque nouvelle.", "Archivage consultable."], en: ["News submission by reporters.", "Tracking of each item's validation.", "Searchable archive."] },
@@ -130,7 +138,8 @@
     var f = $("#site-footer");
     if (f) {
       f.innerHTML = '<footer class="foot"><div class="wrap"><div><b>Isaac MWEMBIA CINZA</b><br>' + L("CEO de CINZA Labs", "CEO of CINZA Labs") + ' · Mbujimayi, ' + L("RDC", "DRC") + ' · © ' + new Date().getFullYear() + ' · ' + L("Tous droits réservés", "All rights reserved") + '</div>' +
-        '<nav aria-label="Pied de page">' + NAV.map(function (n) { return '<a href="' + n.href + '">' + L(n.fr, n.en) + "</a>"; }).join("") + (GA_ID ? '<button type="button" class="cookie-link" id="cookie-btn">' + L("Cookies", "Cookies") + "</button>" : "") + "</nav></div></footer>" +
+        '<nav aria-label="Pied de page">' + NAV.map(function (n) { return '<a href="' + n.href + '">' + L(n.fr, n.en) + "</a>"; }).join("") + (GA_ID ? '<button type="button" class="cookie-link" id="cookie-btn">' + L("Cookies", "Cookies") + "</button>" : "") + "</nav>" +
+        '<nav class="foot-svc" aria-label="Services">' + ["data", "research", "front"].map(function (id) { var p = POLE_BY_ID[id]; return svcLink(id, "", p.title.fr, p.title.en); }).join("") + "</nav></div></footer>" +
         '<div class="fab"><a data-wa target="_blank" rel="noopener" href="https://wa.me/' + CONTACT.phone + '" aria-label="WhatsApp">' +
         '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19z"/></svg><span>WhatsApp</span></a></div>';
     }
@@ -150,8 +159,10 @@
   /* ---------- Language and theme ---------- */
   var lang = load("pf-lang");
   if (lang !== "fr" && lang !== "en") lang = (navigator.language || "fr").toLowerCase().indexOf("en") === 0 ? "en" : "fr";
+  var pageLang = app ? app.getAttribute("data-lang") : null, pageAlt = app ? app.getAttribute("data-alt") : null;
+  if (pageLang === "fr" || pageLang === "en") lang = pageLang; /* page de service : la langue est celle de la page */
   function setLang(l) {
-    lang = l; root.setAttribute("lang", l); store("pf-lang", l);
+    lang = l; root.setAttribute("lang", l); if (!pageLang) store("pf-lang", l);
     var lb = $("#lang-btn"); if (lb) lb.textContent = l === "fr" ? "EN" : "FR";
     refreshLinks(); renderRole(true); refreshCv(); refreshSelect();
   }
@@ -181,7 +192,7 @@
   }
   function refreshLinks() {
     var general = lang === "fr" ? "Bonjour Isaac, je vous contacte depuis votre portfolio." : "Hello Isaac, I am reaching out from your portfolio.";
-    $$("[data-wa]").forEach(function (a) { a.href = waLink(general); });
+    $$("[data-wa]").forEach(function (a) { a.href = waLink(a.getAttribute("data-wa-" + lang) || general); });
     $$("[data-mail]").forEach(function (a) { a.href = gmailLink(lang === "fr" ? "Contact depuis votre portfolio" : "Contact from your portfolio", general); });
     if ($("#send-wa")) {
       var text = composeText(), who = ($("#f-name").value || "").trim() || (lang === "fr" ? "Contact portfolio" : "Portfolio contact");
@@ -227,7 +238,7 @@
     setInterval(function () { if (reduce || document.hidden) return; roleIdx = (roleIdx + 1) % ROLES.length; renderRole(); }, 2800);
     var pc = $("#pole-cards");
     if (pc) pc.innerHTML = POLES.map(function (p) {
-      return '<article class="card ' + p.c + '"><span class="tag">' + L(p.label.fr, p.label.en) + "</span><h3>" + L(p.title.fr, p.title.en) + "</h3><p>" + L(p.short.fr, p.short.en) + '</p><a class="link-more" href="competences.html#' + p.id + '">' + L("Voir les compétences", "See the skills") + "</a></article>";
+      return '<article class="card ' + p.c + '"><span class="tag">' + L(p.label.fr, p.label.en) + "</span><h3>" + L(p.title.fr, p.title.en) + "</h3><p>" + L(p.short.fr, p.short.en) + '</p>' + svcLink(p.id, "link-more", "Voir ce service", "See this service") + "</article>";
     }).join("");
     var ft = $("#featured");
     if (ft) { ft.innerHTML = [PROJECTS[0], PROJECTS[2]].map(function (p) { return projectCard(p, false); }).join(""); }
@@ -261,7 +272,7 @@
         '<div class="pole-intro"><span class="tag">' + L(p.label.fr, p.label.en) + "</span><h2>" + L(p.title.fr, p.title.en) + "</h2><p>" + L(p.text.fr, p.text.en) + "</p>" +
         '<span class="level"><i><b></b><b></b><b></b><b></b><b></b></i>' + L("Niveau très avancé", "Very advanced level") + "</span>" +
         '<h3 class="mini">' + L("Pour qui", "Who it is for") + '</h3><p>' + L(p.audience.fr, p.audience.en) + "</p>" +
-        '<h3 class="mini">' + L("Outils", "Tools") + '</h3><ul class="chips">' + p.tools.map(function (t) { return "<li>" + t + "</li>"; }).join("") + "</ul></div>" +
+        '<h3 class="mini">' + L("Outils", "Tools") + '</h3><ul class="chips">' + p.tools.map(function (t) { return "<li>" + t + "</li>"; }).join("") + "</ul>" + svcLink(p.id, "link-more", "Voir la page de ce service", "See this service page") + "</div>" +
         '<div><h3 class="mini">' + L("Ce que je fais", "What I do") + '</h3><ul class="rows">' + p.offers.map(function (o) {
           return "<li><h3>" + L(o.t.fr, o.t.en) + "</h3><p>" + L(o.d.fr, o.d.en) + "</p></li>";
         }).join("") + "</ul>" + (p.note ? '<p class="note">' + L(p.note.fr, p.note.en) + "</p>" : "") + "</div></section>";
@@ -390,7 +401,11 @@
     var next = isDark() ? "light" : "dark";
     root.setAttribute("data-theme", next); store("pf-theme", next);
   });
-  $("#lang-btn").addEventListener("click", function () { setLang(lang === "fr" ? "en" : "fr"); });
+  $("#lang-btn").addEventListener("click", function () {
+    var next = lang === "fr" ? "en" : "fr";
+    if (pageLang && pageAlt) { store("pf-lang", next); location.href = pageAlt; return; }
+    setLang(next);
+  });
   setLang(lang);
   if (page === "contact") refreshSelect();
   var as = document.createElement("script"); as.src = "assistant.js"; as.defer = true; document.body.appendChild(as);
